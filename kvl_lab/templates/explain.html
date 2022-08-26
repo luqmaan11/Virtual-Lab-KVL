@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhai+2:wght@400;500&family=Baloo+Bhaina+2:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <title> Vitual lab </title>
+    <style>
+        * {
+            text-align: justify;
+            font-family: 'Baloo Bhai 2', cursive;
+        }
+
+        .my-heading {
+            text-align: justify;
+
+        }
+
+        .container-heading {
+       padding-top : 5px;
+
+        background-color: #009270;
+<!--            background-color: #6b24ab;-->
+            height: 60px;
+            color: white;
+            border-radius: 4px;
+
+        }
+
+        .container-heading-sub-head {
+            height: 35px;
+            border-radius: 4px;
+        }
+
+        .container-description {
+            text-align: justify;
+        }
+         .indicator {
+            width: 50px;
+
+            height: 50px;
+            border-radius: 50px;
+            position: fixed;
+            bottom: 2px;
+            right: 4px;
+            background-color: #1a1aae;
+        }
+
+        .indicator a {
+            text-decoration: none;
+        }
+
+        .ind {
+            position: relative;
+            left: 13px;
+            bottom: 7px;
+            color: white;
+        }
+
+
+    </style>
+
+</head>
+
+<body >
+    {% load static %}
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">VIRTUAL LAB</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
+                    </li>
+                </ul>
+                <form class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <div class="indicator">
+        <a href="#"><span class="ind" style='font-size:40px;'>&#8679;</span></a>
+    </div>
+
+    <div class="container mt-2">
+        <div class="row d-flex">
+            <div class=" col-md-4 mt-2 mb-2 col-sm-12 d-flex align-item-center justify-content-center ">
+                <div class="">
+                    <img src="{% static 'images/1.jpg' %}">
+                </div>
+            </div>
+            <div class="my-heading col-md-8 col-sm-12   d-flex flex-column justify-content-center">
+                <div class=" d-flex flex-column justify-content-center">
+                    <div>
+                        <h2>Kirchhoff’s Voltage Law </h2>
+                    </div>
+                    <div>
+                        Kirchhoff’s Voltage Law (KVL) is Kirchhoff’s second
+                        law that deals with the conservation of energy
+                        around a closed circuit path.It states that <br>
+                        " <b>The algebraic sum of all the voltages around any closed loop in a circuit is equal to
+                            zero</b>".
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container container-heading mt-3">
+        <div class="d-flex align-items-center">
+            <h4>
+                Description
+            </h4>
+        </div>
+    </div>
+
+    <div class="container container-description mt-2">
+        <b>Gustav Kirchhoff’s Voltage Law</b> is the second of his fundamental laws we can use for circuit analysis. His
+        voltage law states that for a closed loop series path the algebraic sum of all the voltages around any closed
+        loop in a circuit is equal to zero. This is because a circuit loop is a closed conducting path so no energy is
+        lost.
+
+        In other words the algebraic sum of ALL the potential differences around the loop must be equal to zero as:
+        <b>ΣV =
+            0.</b> Note here that the term “algebraic sum” means to take into account the polarities and signs of the
+        sources
+        and voltage drops around the loop.<br><br>
+
+        This idea by Kirchhoff is commonly known as the <b>Conservation of Energy</b>, as moving around a closed loop,
+        or
+        circuit, you will end up back to where you started in the circuit and therefore back to the same initial
+        potential with no loss of voltage around the loop. Hence any voltage drops around the loop must be equal to any
+        voltage sources met along the way.
+
+        So when applying Kirchhoff’s voltage law to a specific circuit element, it is important that we pay special
+        attention to the algebraic signs, (+ and -) of the voltage drops across elements and the emf’s of sources
+        otherwise our calculations may be wrong.
+
+        But before we look more closely at Kirchhoff’s voltage law (KVL) lets first understand the voltage drop across a
+        single element such as a resistor.
+    </div>
+    <div class="container container-heading d-flex align-items-center mt-3">
+        <div class="">
+            <h4>
+                Ways to apply
+            </h4>
+        </div>
+    </div>
+    <div class="container mt-2 ">
+
+        <div class="row">
+            <!--            #============================-->
+            <div class="col-md-12 col-lg-6 ">
+                <div class="container-heading-sub-head d-flex align-items-center mt-2 mb-2">
+                    <div class="">
+                        <h5>
+                            <strong>Single Circuit Element</strong>
+                        </h5>
+                    </div>
+                </div>
+
+                <div class="row d-flex">
+
+                    <div class="col-4 me-4  d-flex justify-content-center align-item-center">
+
+                            <img src="{% static 'images/2.jpg' %}">
+
+
+                    </div>
+                    <div class="col-7">
+                        For this simple example we will assume that the current, I is in the same direction as the flow
+                        of positive charge, that is conventional current flow.
+
+                        Here the flow of current through the resistor is from point A to point B, that is from positive
+                        terminal to a negative terminal.
+                    </div>
+                    <div class="mt-2">
+                        Thus as we are travelling in the same direction as current flow, there will be a fall in
+                        potential across the resistive element giving rise to a -IR voltage drop across it.
+
+                        If the flow of current was in the opposite direction from point B to point A, then there would
+                        be a rise in potential across the resistive element as we are moving from a - potential to a +
+                        potential giving us a +I*R voltage drop.
+
+                        Thus to apply Kirchhoff’s voltage law correctly to a circuit, we must first understand the
+                        direction of the polarity and as we can see, the sign of the voltage drop across the resistive
+                        element will depend on the direction of the current flowing through it. As a general rule, you
+                        will loose potential in the same direction of current across an element and gain potential as
+                        you move in the direction of an emf source.
+
+                        The direction of current flow around a closed circuit can be assumed to be either clockwise or
+                        anticlockwise and either one can be chosen. If the direction chosen is different from the actual
+                        direction of current flow, the result will still be correct and valid but will result in the
+                        algebraic answer having a minus sign.
+                    </div>
+                </div>
+            </div>
+
+            <!--            #===================-->
+            <div class="col-md-12 col-lg-6 ">
+                <div class="container-heading-sub-head d-flex align-items-center mt-2">
+                    <div class="">
+                        <h5>
+                            <strong>Single Circuit Loop</strong>
+                        </h5>
+                    </div>
+                </div>
+                <div>
+                    <div class=" d-flex justify-content-center align-item-center">
+                        <img src="{% static 'images/3.jpg' %}">
+                    </div>
+                    <div>
+                        Kirchhoff’s voltage law states that the algebraic sum of the potential differences in any loop
+                        must be equal to zero as: ΣV = 0. Since the two resistors, R1 and R2 are wired together in a
+                        series connection, they are both part of the same loop so the same current must flow through
+                        each resistor.
+                    </div>
+                    <div>
+                        <div>
+                            <br>
+                            Thus the voltage drop across resistor, R1 = I*R1 and the voltage drop across resistor, R2 =
+                            I*R2 giving by KVL:
+                        </div>
+                        <div class="row  mt-2">
+                            <div class="col-6">
+                                <div class="d-flex justify-content-center align-item-center">
+                                    <img style="width : 150px;" src="{% static 'images/4.jpg' %}">
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="d-flex justify-content-center align-item-center">
+                                    <img style="width : 150px;" src="{% static 'images/5.jpg' %}">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="container container-heading d-flex align-items-center mt-3">
+        <div class="">
+            <h4>
+                Examples
+            </h4>
+        </div>
+
+    </div>
+    <div class="container">
+        <div class="mt-2">
+            Three resistor of values: 10 ohms, 20 ohms and 30 ohms, respectively are connected in series across a 12
+            volt battery supply. Calculate: a) the total resistance, b) the circuit current, c) the current through
+            each resistor, d) the voltage drop across each resistor, e) verify that Kirchhoff’s voltage law, KVL
+            holds true.
+        </div>
+          <div class="mt-2 mb-2">
+           <div class=" d-flex justify-content-center align-item-center">
+                        <img style = "width : 300px;" src="{% static 'images/9.jpg' %}">
+                    </div>
+        </div><br>
+        <div class="row mt-2 ">
+            <div class="col-6 ">
+                <div>
+                    <strong>a) Total Resistance (RT)</strong><br>
+                    <div class="mt-2 mb-2 d-flex justify-content-center align-items-center">
+
+                        RT = R1 + R2 + R3 = 10Ω + 20Ω + 30Ω = 60Ω<br>
+                    </div>
+
+                    Then the total circuit resistance RT is equal to 60Ω
+                </div><br>
+                <div>
+                    <strong>b) Circuit Current (I)</strong><br>
+
+                    <div class=" mt-2 mb-2  d-flex justify-content-center align-item-center">
+                        I = Vs/Rt = 12/60 = 0
+                    </div>
+
+                    Thus the total circuit current I is equal to 0.2 amperes or 200mA
+                </div>
+            </div>
+            <div class="col-6 ">
+                <div>
+                    <strong>c) Current Through Each Resistor</strong><br>
+
+                    <div class=" mt-2 mb-2 ">
+                        The resistors are wired together in series, they are all part of the same loop and therefore
+                        each experience the same amount of current. Thus:
+
+
+                    </div>
+
+                    <div class="mt-2 mb-2 d-flex justify-content-center align-items-center">
+
+                        IR1 = IR2 = IR3 = ISERIES = 0.2 amperes
+                    </div>
+                </div>
+
+                <div>
+                    <strong>d) Voltage Drop Across Each Resistor</strong><br>
+                    <div class="mt-2 mb-2 d-flex justify-content-center align-items-center">
+
+                        VR1 = I x R1 = 0.2 x 10 = 2 volts<br>
+
+                        VR2 = I x R2 = 0.2 x 20 = 4 volts<br>
+
+                        VR3 = I x R3 = 0.2 x 30 = 6 volts<br>
+
+
+                    </div>
+
+
+                </div>
+                <br>
+            </div>
+
+        </div>
+        <div>
+            <strong>e) Verify Kirchoff's voltage law</strong><br>
+
+            <div class=" mt-2 mb-2 d-flex justify-content-center align-items-center">
+
+                Vs + (-IR1) + (-IR2) +  (-IR3) = 0 <br>
+                12 + (-0.2*10) + (-0.2*10) + (-0.2*10)  = 0 <br>
+                12 + (-2) + (-4) + (-6) = 0<br>
+                12 - 2 - 4 - 6 = 0 &nbsp;(Verified)
+            </div>
+            <div>
+                Thus Kirchhoff’s voltage law holds true as the individual voltage drops around the closed loop add up to
+                the total.
+            </div>
+
+        </div>
+    </div>
+     <div class="mt-2 mb-2 container container-heading d-flex align-items-center mt-3">
+        <div class="">
+            <h4>
+                Useful Video Link
+            </h4>
+        </div>
+    </div>
+    <div class="container">
+        <div class = "row">
+            <div>
+                <div class = "mt-2 mb-2  d-flex justify-content-center align-items-center">
+                    <iframe width="350" height="300" src="https://www.youtube.com/embed/UkH4CaAsG6Q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+
+    </div>
+  
+</body>
+
+</html>

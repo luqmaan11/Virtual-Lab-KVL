@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Baloo+Bhai+2:wght@400;500&family=Baloo+Bhaina+2:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <title> Vitual lab </title>
+     {% load static %}
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            font-family: 'Baloo Bhai 2', cursive;
+        }
+
+        .sub_btn {
+            background-color: #009270;
+            border: none;
+            width: 100px;
+            height: 35px;
+            border-radius: 4px;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+        .vl {
+            border-left: 6px solid green;
+            height: 200px;
+        }
+
+        .hl {
+            border-top: 6px solid green;
+            width: 360px;
+        }
+
+        .hl1 {
+            position: absolute;
+            top: 108px;
+            border-top: 6px solid black;
+            width: 360px;
+        }
+
+        .vl1 {
+            position: absolute;
+            top: 114px;
+            left: 450px;
+            border-left: 6px solid black;
+            height: 200px;
+        }
+
+        .square {
+            position: absolute;
+            left: 250px;
+            top: 140px;
+            height: 350px;
+            width: 600px;
+            border: 6px solid black;
+
+        }
+
+        < !-- .volt {
+            -->< !-- position: absolute;
+            -->< !-- top: 460px;
+            -->< !-- left: 560px;
+            -->< !--
+        }
+
+        -->< !-- .resistor {
+            -->< !-- position: absolute;
+            -->< !-- top: 100px;
+            -->< !-- left: 560px;
+            -->< !--
+        }
+        -->
+        .current {
+            position: absolute;
+            top: 270px;
+            left: 700px;
+<!--           animation: mymove 10s infinite;-->
+        }
+        .comp{
+            position : absolute;
+            left : 25px;
+            top : 200px;
+        }
+
+
+            @keyframes mymove {
+            0%{
+                top: 270px;
+                left: 750px;
+                background: url(/static/images/current.jpg);
+            }
+
+            25%{
+                top: 100px;
+                 left: 750px;
+                background: url(/static/images/horizontal.jpg);
+            }
+
+            50%{
+               top:120px;
+               left: 160px;
+                 background: url(/static/images/current.jpg);
+            }
+            75%{
+                top:450px;
+                left: 160px;
+                  background: url(/static/images/horizontal.jpg);
+            }
+            100%{
+                   top: 450px;
+                   left: 750px;
+                   background: url(/static/images/current.jpg);
+            }
+        }
+    </style>
+    <script>
+
+    </script>
+
+</head>
+
+<body>
+    {% load static %}
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">DEMO</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
+                    </li>
+                </ul>
+                <form class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5 ">
+
+        <table class="comp">
+            <tr>
+                <th>
+                    components
+                </th>
+                <th>
+                    symbol
+                </th>
+
+            </tr>
+
+            <tr>
+                <td>
+                    Resistor
+                </td>
+                <td>
+                    R
+                </td>
+                 </tr>
+            <tr>
+                 <td>
+                    Battery
+                </td>
+
+                <td>
+                    B
+                </td>
+            </tr>
+            <tr>
+                 <td>
+                    Current
+                </td>
+                <td>
+                    I
+                </td>
+            </tr>
+
+
+        </table>
+        <div class="square d-flex align-items-center justify-content-center">&nbsp;<strong>Loop 1</strong></div>
+        <script>
+            var count = 0
+
+
+            k = {{lx}}
+            if(k == 2){
+                  l = 420
+            }
+            if(k==3){
+                  l = 360
+            }
+            if(k==4){
+             l = 280
+            }
+            inc = 150
+            var vd = 0
+            var j = 0
+            {% for v in res %}
+            var t = {{ total_cur }}
+            var tmp = {{ v }}
+            var i = t * tmp
+            var n = i.toFixed(2)
+            if (count == 0) {
+                document.write(`
+                     <div class="volt" style = " position: absolute;top: 100px; left: ${l}px;">
+                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;R${j} = {{v}}ohm<br>
+                    <img class="border vimg" src="{% static 'images/resistor.png' %}" width="100px" height="80px"><br>
+                    vdrop = -${n} V<br>
+
+                </div>
+                    `)
+            }
+            if (count != 0) {
+
+                document.write(`
+                     <div class="volt" style = " position: absolute;top: 100px; left: ${l}px;">
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;R${j} = {{v}} ohm<br>
+                <img class="border vimg" src="{% static 'images/resistor.png' %}" width="100px" height="80px"><br>
+                vdrop = -${n} V<br>
+
+                </div>
+                    `)
+            }
+
+            count = count + 1
+            j = j + 1
+            l = l + inc
+            {% endfor %}
+        </script>
+
+
+
+
+        <script>
+            var count = 0
+             k = {{lv}}
+            if(k == 2){
+                  l = 420
+            }
+            else if(k==3){
+                  l = 360
+            }
+            else if(k==4){
+             l = 280
+            }
+            inc = 150
+            j = 0
+            {% for v in volts %}
+            if (count == 0) {
+
+                document.write(`
+                     <div class="volt" style = " position: absolute;top: 460px; left: ${l}px;">
+                <img class="border vimg" src="{% static 'images/download.png' %}" width="100px" height="80px"><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;B${j} = {{v}}volts
+                </div>
+                    `)
+            }
+            if (count != 0) {
+
+                document.write(`
+                     <div class="volt" style = " position: absolute;top: 460px; left: ${l}px;">
+                <img class="border vimg" src="{% static 'images/download.png' %}" width="100px" height="80px"><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;B${j} = {{v}}volts
+                </div>
+                    `)
+            }
+            j = j + 1
+            count = count + 1
+            l = l + inc
+
+
+
+
+            {% endfor %}
+
+        var t = {{total_cur}}
+        var n = t.toFixed(2)
+        document.write(`<div class="current">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I = ${n}amps
+            <img class="border vimg" src="{% static 'images/current.png' %}" width="20px" height="110px">
+        </div>`)
+        </script>
+
+        <script>
+
+              document.write(` <div style = "position: absolute; right : 6px; top:150px;"> <strong> CALCULATIONS </strong><br>
+             <strong> Anticlockwise Direction </strong><br>
+             <div class = "border border-2 pt-2 pb-2 pe-2 ps-2">
+             <strong> Voltage around a Loop 1 </strong><br>
+             {{cal}} ~ 0 VOLTS
+             </div>
+             </div> `)
+
+        </script>
+
+    </div>
+
+</body>
+
+</html>

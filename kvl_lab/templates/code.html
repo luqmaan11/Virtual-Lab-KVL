@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Baloo+Bhai+2:wght@400;500&family=Baloo+Bhaina+2:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <title> code </title>
+    <style>
+        *{
+            font-family: 'Baloo Bhai 2', cursive;
+        }
+        table a{
+            text-decoration : none;
+            color : white
+        }
+        table a: hover{
+
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">VIRTUAL LAB</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
+                    </li>
+                </ul>
+                <form class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-2">
+
+        <table class="table  table-hover table-dark table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Code Link</th>
+                    <th scope="col">Description</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td><a target ="_blank"  href = "https://github.com/Muku18/virtual_lab_kvl/blob/master/kvl_lab/templates/home.html">home.html</a></td>
+                    <td> Landing page</td>
+                </tr>
+                <tr>
+                    <th scope="row">2</th>
+                    <td><a target ="_blank" href = "https://github.com/Muku18/virtual_lab_kvl/blob/master/kvl_lab/templates/explain.html">explain.html</a></td>
+                    <td> Explanation of the experiment</td>
+                </tr>
+                <tr>
+                    <th scope="row">3</th>
+                    <td><a  target ="_blank" href = "https://github.com/Muku18/virtual_lab_kvl/blob/master/kvl/urls.py">urls.py</a></td>
+                    <td>Main app urls linking the app created with the main app.</td>
+                </tr>
+                 <tr>
+                    <th scope="row">4</th>
+                    <td><a  target ="_blank" href = "https://github.com/Muku18/virtual_lab_kvl/blob/master/kvl_lab/urls.py">appurls.py</a></td>
+                    <td>urls of the app created with the main app.</td>
+                </tr>
+                <tr>
+                    <th scope="row">5</th>
+                    <td><a  target ="_blank" href = "https://github.com/Muku18/virtual_lab_kvl/blob/master/kvl_lab/views.py">views.py</a></td>
+                    <td>Logic of the app created with the main app.</td>
+                </tr>
+                <tr>
+                    <th scope="row">6</th>
+                    <td><a  target ="_blank" href = "https://github.com/Muku18/virtual_lab_kvl/blob/master/kvl_lab/apps.py">apps.py</a></td>
+                    <td>app created code</td>
+                </tr>
+                 <tr>
+                    <th scope="row">7</th>
+                    <td><a  target ="_blank" href = "https://github.com/Muku18/virtual_lab_kvl/blob/master/kvl/settings.py">settings.py</a></td>
+                    <td>project settings</td>
+                </tr>
+                <tr>
+                    <th scope="row">8</th>
+                    <td><a  target ="_blank" href = "https://github.com/Muku18/virtual_lab_kvl/blob/master/kvl/wsgi.py">wsgi.py</a></td>
+                    <td>It exposes the WSGI callable as a module-level variable named ``application``</td>
+                </tr>
+            <tr>
+                    <th scope="row">9</th>
+                    <td><a  target ="_blank" href = "https://github.com/Muku18/virtual_lab_kvl/blob/master/kvl/asgi.py">asgi.py</a></td>
+                    <td>It exposes the ASGI callable as a module-level variable named ``application``</td>
+                </tr>
+            </tbody>
+        </table>
+
+
+    </div>
+
+</body>
+
+</html>

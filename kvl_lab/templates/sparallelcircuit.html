@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Baloo+Bhai+2:wght@400;500&family=Baloo+Bhaina+2:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <title>Series Parallel Circuit</title>
+    <style>
+        .square{
+            position : absolute;
+            left : 340px;
+            top : 10px;
+            border : 3px solid black;
+            width : 800px;
+            height : 200px;
+        }
+        .main{
+            position : absolute;
+            top : 270px;
+            left : 128px;
+        }
+        .p_square{
+            position : absolute;
+            left : 800px;
+              border : 3px solid black;
+             width : 300px;
+            height : 80px;
+            top: -70px;
+        }
+         .comp{
+            position : absolute;
+            left : 25px;
+            top : 390px;
+
+        }
+        table,tr,td{
+             border : 2px solid black;
+        }
+    </style>
+</head>
+<div>
+        {% load static %}
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">DEMO</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
+                    </li>
+                </ul>
+                <form class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <div class="border main d-flex align-items-center justify-content-between mt-5">
+<!--        <div> components</div>-->
+        <div class="square d-flex align-items-center justify-content-center">
+            <strong>bigloop</strong>
+        </div>
+
+
+
+        <script>
+            var p_total_res = {{p_totalres}}
+            var t = -70
+            for(var i=0;i<p_total_res-1;i++){
+                    if(i == 0){
+                      document.write(`<div class = "d-flex align-items-center justify-content-center" style="position: absolute;left: 800px;top:${t}px;height: 80px; width: 300px; border: 3px solid black;">
+                   loop ${i}</div>
+
+                   <p style = "position:absolute;top:45px;left:920px;">d=-{{Vsum}}V</p>
+                   
+                   `)
+                   }
+                   else{
+                     document.write(`<div class = "d-flex align-items-center justify-content-center" style="position: absolute;left: 800px;top:${t}px;height: 80px; width: 300px; border: 3px solid black;">
+                   loop ${i}</div>`)
+                   }
+                   t = t - 80
+            }
+        </script>
+
+        <script>
+
+
+            var p_total_res = {{p_totalres}}
+            var t = -25
+            i = 0
+            {% for v in spp_r %}
+                    if(i == 0){
+                      document.write(`<div class="volt" style = " position: absolute;top: ${t}px; left: 830px;">
+                       &nbsp;&nbsp;{{v}}ohm
+                    <img class="border vimg" src="{% static 'images/resistor.png' %}" width="50px" height="30px"><br>
+                     &nbsp;&nbsp;R${i}
+                </div>
+                    `)
+                    }
+                    else{
+                     document.write(`<div class="volt" style = " position: absolute;top: ${t}px; left: 830px;">
+                       &nbsp;&nbsp;{{v}}ohm
+                    <img class="border vimg" src="{% static 'images/resistor.png' %}" width="50px" height="30px"><br>
+                    &nbsp;&nbsp;R${i}
+                </div>
+                    `)
+                    }
+                    i = i + 1
+                   t = t - 80
+            {% endfor %}
+
+
+
+        </script>
+
+
+           <script>
+
+
+            var total_volt = {{totalvolt}}
+            var l = 580
+            i = 0
+           {% for v in vt %}
+                    if(i == 0){
+                      document.write(`<div class="volt" style = " position: absolute;top: 170px; left: ${l}px;">
+                       &nbsp;V${i}= {{v}}V
+                    <img class="border vimg" src="{% static 'images/download.png' %}" width="70px" height="30px"><br>
+                </div>
+                    `)
+                    }
+                    else{
+                     document.write(`<div class="volt" style = " position: absolute;top: 170px; left: ${l}px;">
+                       &nbsp;V${i}= {{v}}V
+                    <img class="border vimg" src="{% static 'images/download.png' %}" width="70px" height="30px"><br>
+                </div>
+                    `)
+                    }
+                   l = l + 120
+                   i = i + 1
+            {% endfor %}
+
+
+        </script>
+
+        <script>
+              document.write(`<div class="current" style = " position: absolute;top: 60px; left: 1130px;">
+               <p style = "position:absolute;top:60px;left: -70px;">I = {{cur}}A</p> <img class="border vimg" src="{% static 'images/current.png' %}" width="20px" height="70px">
+            </div>`)
+        </script>
+
+        <script>
+
+            var p_total_res = {{p_totalres}}
+            var t = -25
+            i = 0
+            {% for v in cpar %}
+                    if(i == 0){
+                      document.write(`<div class="volt" style = " position: absolute;top: ${t}px; left: 1050px;">
+                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <img class="border vimg" src="{% static 'images/horizontal.png' %}" width="30px" height="20px"><br>
+                    {{v}}A
+                </div>
+                    `)
+                    }
+                    else{
+                     document.write(`<div class="volt" style = " position: absolute;top: ${t}px; left: 1050px;">
+                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <img class="border vimg" src="{% static 'images/horizontal.png' %}" width="30px" height="20px"><br>
+                    {{v}}A
+                </div>
+                    `)
+                    }
+                   t = t - 80
+                   i = i + 1
+            {% endfor %}
+
+        </script>
+
+        <script>
+            var s_total_res = {{s_totalres}}
+            var l = 370
+            j = 0
+            if (s_total_res == 4){
+             l = 370
+            }
+            if (s_total_res == 3){
+                l = 420
+            }
+            if (s_total_res == 2){
+             l = 470
+            }
+            {% for v in sps_r %}
+                    var c = {{cur}}
+                    var t = {{v}}
+                    var n = (c*t)
+                    var f = n.toFixed(2)
+                    if(j == 0){
+                      document.write(`<div class="volt" style = " position: absolute;top: -50px; left: ${l}px;">
+                       &nbsp;&nbsp;&nbsp;{{v}}ohm
+                    <img class="border vimg" src="{% static 'images/resistor.png' %}" width="70px" height="50px"><br>
+                     &nbsp;&nbsp;&nbsp;&nbsp;R${j}<br>
+                     d=-${f}V
+                </div>
+                    `)
+                    }
+                    else{
+                     document.write(`<div class="volt" style = " position: absolute;top: -50px; left: ${l}px;">
+                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{v}}ohm
+                    <img class="border vimg" src="{% static 'images/resistor.png' %}" width="70px" height="50px"><br>
+                     &nbsp;&nbsp;&nbsp;&nbsp;R${j}<br>
+                     d=-${f}V
+                </div>
+                    `)
+                    }
+                   l = l + 100
+                   j = j + 1
+            {% endfor %}
+        </script>
+
+    </div>
+    <script>
+        document.write(`<div style = "position:absolute;top:80px;left:10px;"> <strong>Calculations</strong><br><br>
+        <strong> Current direction anticlockwise while traversing the loops</strong><br>
+        <strong>For loop 0 :</strong><br>
+         {{loop0}} ~ 0 volts<br>
+
+         <strong>For Big loop :</strong><br>
+         {{bigloop}}<br> ~ 0 volts<br>
+
+         <strong>Taking Bigloop and loop0 :</strong><br>
+         {{bigloop1}}<br> ~ 0 volts<br>
+
+         <strong>Note : Similar calculation for other loops</strong>
+        </div>`)
+    </script>
+       <div class="comp">
+       <table >
+            <tr>
+                <th>
+                    components
+                </th>
+                <th>
+                    symbol
+                </th>
+
+            </tr>
+
+            <tr>
+                <td>
+                    Resistor
+                </td>
+                <td>
+                    R
+                </td>
+                 </tr>
+            <tr>
+                 <td>
+                    Battery
+                </td>
+
+                <td>
+                    B
+                </td>
+            </tr>
+            <tr>
+                 <td>
+                    Current
+                </td>
+                <td>
+                    I
+                </td>
+            </tr>
+
+       </table>
+           <br>
+           <strong>Note : d --> voltage drop</strong>
+</div>
+
+
+
+</body>
+</html>
